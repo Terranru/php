@@ -1,4 +1,5 @@
 <?php
+require_once('Arrays.php');
 
 use function App\Arrays\swap;
 

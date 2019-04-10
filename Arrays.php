@@ -14,11 +14,12 @@ function addPrefix($names, $prefix)
 
 function swap($names, $index)
 {   
-    
+    $namesnew[]='';
 
-    if ((array_key_exists($index - 1, $names) and (array_key_exists($index + 1, $names))
+    if (array_key_exists($index - 1, $names) or array_key_exists($index + 1, $names))
     {
         $namesnew = [$names[$index+1], $names[$index], $names[$index-1]];
+    //    $namesnew = $names;
     }
     else
     {
