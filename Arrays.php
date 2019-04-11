@@ -19,14 +19,35 @@ function swap($names, $index)
     if (array_key_exists($index - 1, $names) and array_key_exists($index + 1, $names))
     {
         $namesnew = [$names[$index+1], $names[$index], $names[$index-1]];
-    //    $namesnew = $names;
     }
     else
     {
         $namesnew = $names;
     }
-    
     return $namesnew;
+}
+
+function isContinuousSequence($arr)
+{
+    if (sizeof($arr)-1 < 1){
+        return FALSE;
+    }
+    $result = TRUE;
+    $firstIndex = $arr[0];
+    foreach ($arr as $i => $item){
+        if ($item != $firstIndex + $i){
+            $result = FALSE;
+            return $result;
+        }
+    }
+    return $result;
+}
+
+function calculateAverage($temperatures)
+{
+    if (empty($temperatures)) {
+        return null;
+    }
 }
 
 // END

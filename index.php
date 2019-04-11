@@ -1,15 +1,9 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\swap;
+use function App\Arrays\isContinuousSequence;
 
-$names = ['john', 'smith', 'karl'];
-
-$result = swap($names, 1);
-print_r($result); // => ['karl', 'smith', 'john']
-
-$result = swap($names, 2);
-print_r($result); // => ['john', 'smith', 'karl']
-
-$result = swap($names, 0);
-print_r($result); // => ['john', 'smith', 'karl']
+isContinuousSequence([10, 11, 12, 13]);     // => true
+isContinuousSequence([10, 11, 12, 14, 15]); // => false
+isContinuousSequence([1, 2, 2, 3]);         // => false
+isContinuousSequence([]);                   // => false
