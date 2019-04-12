@@ -48,6 +48,12 @@ function calculateAverage($temperatures)
     if (empty($temperatures)) {
         return null;
     }
+    $sum = 0;
+    $qnt = count($temperatures);
+    foreach ($temperatures as $value) {
+        $sum += $value;
+    }
+    return $sum / $qnt;
 }
 
 // END

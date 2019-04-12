@@ -1,9 +1,8 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\isContinuousSequence;
+use function App\Arrays\calculateAverage;
 
-isContinuousSequence([10, 11, 12, 13]);     // => true
-isContinuousSequence([10, 11, 12, 14, 15]); // => false
-isContinuousSequence([1, 2, 2, 3]);         // => false
-isContinuousSequence([]);                   // => false
+$temperatures = [37.5, 34, 39.3, 40, 38.7, 41.5];
+
+print_r(calculateAverage($temperatures)); // => 38.5
