@@ -56,4 +56,13 @@ function calculateAverage($temperatures)
     return $sum / $qnt;
 }
 
+function findIndex($temperatures, $c){
+    foreach ($temperatures as $key => $value) {
+        if ($value === $c) {
+            return $key;
+        }
+    }
+    return -1;
+}
+
 // END
