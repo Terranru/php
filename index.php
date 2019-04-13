@@ -1,10 +1,9 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\findIndex;
+use function App\Arrays\getSameParity;
 
-$temperatures = [37.5, 34, 39.3, 40, 38.7, 41.5, 40];
-
-findIndex($temperatures, 34); // => 1
-findIndex($temperatures, 40); // => 3
-findIndex($temperatures, 3);  // => -1
+getSameParity([]);        // => []
+getSameParity([1, 2, 3]); // => [1, 3]
+getSameParity([1, 2, 8]); // => [1]
+getSameParity([2, 2, 8]); // => [2, 2, 8]

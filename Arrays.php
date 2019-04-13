@@ -65,4 +65,26 @@ function findIndex($temperatures, $c){
     return -1;
 }
 
+function getSameParity($coll){
+    if (empty($coll)) {
+        return $coll;
+    }
+    $newarr1 = [];
+    $newarr2 = [];
+    foreach ($coll as $value) {
+        if ($value % 2 == 0 ) {
+            $newarr2[] = $value;
+        }
+        else{
+            $newarr1[] = $value;
+        }
+
+    }
+    if ($coll[0] % 2 == 0) {
+        return $newarr2;
+    }
+    else {
+        return $newarr1;
+    }
+}
 // END
