@@ -106,8 +106,19 @@ function getIndexOfWarmestDay($arr){
     return $maxkey;
 }
 
-function buildDefinitionList()
+function buildDefinitionList($definitions)
 {
-    
+    if (empty($definitions))
+    {
+        return null;
+    }
+    $tempdefarr = [];
+    foreach ($definitions as $value) {
+        $tempdefarr[] = "<dt>{$value[0]}</dt>";
+        $tempdefarr[] = "<dd>{$value[1]}</dd>";
+    }
+    $innerValue = implode('', $tempdefarr);
+    $result = "<dl>{$innerValue}</dl>";
+    return $result;
 }
 // END
