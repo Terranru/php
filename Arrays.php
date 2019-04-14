@@ -129,5 +129,7 @@ function makeCensored($sentence, array $censore)
     foreach ($words as $value) {
         $newsentence[] = (in_array($value, $censore)) ? "$#%!" : $value ;
     }
+    $innerValue = implode(' ', $newsentence);
+    return $innerValue;
 }
 // END
