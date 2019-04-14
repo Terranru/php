@@ -121,4 +121,13 @@ function buildDefinitionList($definitions)
     $result = "<dl>{$innerValue}</dl>";
     return $result;
 }
+
+function makeCensored($sentence, array $censore)
+{
+    $newsentence = [];
+    $words = explode(' ', $sentence);
+    foreach ($words as $value) {
+        $newsentence[] = (in_array($value, $censore)) ? "$#%!" : $value ;
+    }
+}
 // END

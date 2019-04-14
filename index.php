@@ -1,12 +1,12 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\buildDefinitionList;
+use function App\Arrays\makeCensored;
 
-$definitions = [
-    ['Блямба', 'Выпуклость, утолщения на поверхности чего-либо'],
-    ['Бобр', 'Животное из отряда грызунов'],
-];
+$sentence = 'When you play the game of thrones, you win or you die';
+makeCensored($sentence, ['die', 'play']);
+// => When you $#%! the game of thrones, you win or you $#%!
 
-buildDefinitionList($definitions);
-// => '<dl><dt>Блямба</dt><dd>Выпуклость, утолщение на поверхности чего-либо</dd><dt>Бобр</dt><dd>Живтоное из отряда грызунов</dd></dl>';
+$sentence2 = 'chicken chicken? chicken! chicken';
+makeCensored($sentence2, ['?', 'chicken']);
+// => '$#%! chicken? chicken! $#%!';
