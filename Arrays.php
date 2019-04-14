@@ -87,4 +87,27 @@ function getSameParity($coll){
         return $newarr1;
     }
 }
+
+function getIndexOfWarmestDay($arr){
+    if (empty($arr))
+    {
+        return null;
+    }
+    $max = null;
+    $maxkey = null;
+    foreach ($arr as $key => $value)
+    {
+        $currentmax = max($value);
+        if ($max < $currentmax) {
+            $max = $currentmax;
+            $maxkey = $key;
+        }
+    }
+    return $maxkey;
+}
+
+function buildDefinitionList()
+{
+    
+}
 // END

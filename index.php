@@ -1,9 +1,12 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\getSameParity;
+use function App\Arrays\buildDefinitionList;
 
-getSameParity([]);        // => []
-getSameParity([1, 2, 3]); // => [1, 3]
-getSameParity([1, 2, 8]); // => [1]
-getSameParity([2, 2, 8]); // => [2, 2, 8]
+$definitions = [
+    ['Блямба', 'Выпуклость, утолщения на поверхности чего-либо'],
+    ['Бобр', 'Животное из отряда грызунов'],
+];
+
+buildDefinitionList($definitions);
+// => '<dl><dt>Блямба</dt><dd>Выпуклость, утолщение на поверхности чего-либо</dd><dt>Бобр</dt><dd>Живтоное из отряда грызунов</dd></dl>';
