@@ -1,12 +1,8 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\makeCensored;
+use function App\Arrays\getSameCount;
 
-$sentence = 'When you play the game of thrones, you win or you die';
-print_r(makeCensored($sentence, ['die', 'play']));
-// => When you $#%! the game of thrones, you win or you $#%!
-
-$sentence2 = 'chicken chicken? chicken! chicken';
-print_r(makeCensored($sentence2, ['?', 'chicken']));
-// => '$#%! chicken? chicken! $#%!';
+getSameCount([], []); // => 0
+getSameCount([1, 10, 3], [10, 100, 35, 1]); // => 2
+getSameCount([1, 3, 2, 2], [3, 1, 1, 2]); // => 3

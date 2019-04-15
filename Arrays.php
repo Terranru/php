@@ -132,4 +132,17 @@ function makeCensored($sentence, array $censore)
     $innerValue = implode(' ', $newsentence);
     return $innerValue;
 }
+
+function getSameCount(array $coll1, array $coll2)
+{
+    $big_coll[] = 0;
+    foreach ($coll1 as $item) {
+        if (!in_array($item, $big_coll)) {
+            $big_coll[] = $item;
+        }
+    }
+    print_r($big_coll);
+    echo("/n");
+}
+
 // END
