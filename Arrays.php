@@ -142,9 +142,17 @@ function concat($result, $items)
 }
 
 function getSameCount(array $coll1, array $coll2)
-{
+{   
+    $big_coll = [];
+    if (empty($coll1) or empty($coll2))
+    {
+        return 0;
+    }
     $big_coll = array();
     foreach ($coll1 as $item) {
+        if (is_array($item)) {
+            $item = concat($result, $item);
+        }
         if (in_array($item, $coll2) and !in_array($item, $big_coll)) {
             $big_coll[] = $item;
         }
