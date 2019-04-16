@@ -133,16 +133,23 @@ function makeCensored($sentence, array $censore)
     return $innerValue;
 }
 
+function concat($result, $items)
+{
+    foreach ($items as $item) {
+        $result[] = $item;
+    }
+    return $result;
+}
+
 function getSameCount(array $coll1, array $coll2)
 {
-    $big_coll[] = 0;
+    $big_coll = array();
     foreach ($coll1 as $item) {
-        if (!in_array($item, $big_coll)) {
+        if (in_array($item, $coll2) and !in_array($item, $big_coll)) {
             $big_coll[] = $item;
         }
     }
-    print_r($big_coll);
-    echo("/n");
+    return count($big_coll);
 }
 
 // END
