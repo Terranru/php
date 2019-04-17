@@ -164,15 +164,24 @@ function getSameCount(array $coll1, array $coll2)
 
 function countUniqChars($text)
 {
-    // создадим массив
+    // проверяем на пустоту и создадим массив из строки
     $len = strlen($text);
     if ($len === 0) {
         return 0;
     }
-    for ($i=0; $i < $len; $i++) { 
-        
+    $arraystr = str_split($text);
+    //
+    $arrnew = [];
+    foreach ($arraystr as $value) {
+        if (!in_array($value, $arrnew, true)) {
+            $arrnew[] = $value;
+        }
     }
-
+    return count($arrnew);
 }
 
+function bubbleSort($coll)
+{
+    return $coll;
+}
 // END
