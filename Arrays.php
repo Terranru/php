@@ -162,4 +162,17 @@ function getSameCount(array $coll1, array $coll2)
     return count($big_coll);
 }
 
+function countUniqChars($text)
+{
+    // создадим массив
+    $len = strlen($text);
+    if ($len === 0) {
+        return 0;
+    }
+    for ($i=0; $i < $len; $i++) { 
+        
+    }
+
+}
+
 // END
