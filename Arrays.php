@@ -153,7 +153,9 @@ function getSameCount(array $coll1, array $coll2)
         if (is_array($item)) {
             $item = concat($result, $item);
         }
-        if (in_array($item, $coll2) and !in_array($item, $big_coll)) {
+        if (in_array($item, $coll2, true) and !in_array($item, $big_coll, true)) {
+            $r = null;
+            $r = array_search('two', $coll2);
             $big_coll[] = $item;
         }
     }
