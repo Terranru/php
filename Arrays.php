@@ -182,6 +182,15 @@ function countUniqChars($text)
 
 function bubbleSort($coll)
 {
+    $size = sizeof($coll);
+    for ($i=0; $i < $size - 1; $i++) { 
+        if ($coll[$i] < $coll[$i +1]) {
+             $coll[$i]
+        }
+    }
+
+
+
     return $coll;
 }
 // END
