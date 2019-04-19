@@ -208,7 +208,13 @@ function checkIfBalanced($expression)
         }
         elseif ($curr == ')')
         {
-            array_pop($stack);
+            if (count($stack) > 0) {
+                array_pop($stack);
+            }
+            else
+            {
+                return FALSE;
+            }
         }
     }
     return count($stack) == 0;
