@@ -1,7 +1,7 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\checkIfBalanced;
+use function App\Arrays\getIntersectionForSortedArray;
 
-checkIfBalanced('(5 + 6) * (7 + 8)/(4 + 3)'); // => true
-checkIfBalanced('(4 + 3))'); // => false
+getIntersectionOfSortedArray([10, 11, 24], [10, 13, 14, 18, 24, 30]);
+// => [10, 24]

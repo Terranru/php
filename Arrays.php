@@ -219,4 +219,9 @@ function checkIfBalanced($expression)
     }
     return count($stack) == 0;
 }
+
+function getIntersectionForSortedArray($coll1, $coll2)
+{
+    
+}
 // END
