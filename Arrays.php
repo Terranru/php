@@ -197,4 +197,20 @@ function bubbleSort($coll)
     }
     return $coll;
 }
+
+function checkIfBalanced($expression)
+{
+    $stack = [];
+    for ($i=0; $i < strlen($expression); $i++) { 
+        $curr = $expression[$i];
+        if ($curr == '(') {
+            array_push($stack, $curr);
+        }
+        elseif ($curr == ')')
+        {
+            array_pop($stack);
+        }
+    }
+    return count($stack) == 0;
+}
 // END

@@ -1,9 +1,7 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\bubbleSort;
+use function App\Arrays\checkIfBalanced;
 
-
-print_r(bubbleSort([])); // => []
-print_r(bubbleSort([3, 10, 4, 3])); // => [3, 3, 4, 10]
-
+checkIfBalanced('(5 + 6) * (7 + 8)/(4 + 3)'); // => true
+checkIfBalanced('(4 + 3))'); // => false
