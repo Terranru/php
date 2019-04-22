@@ -220,12 +220,28 @@ function checkIfBalanced($expression)
     return count($stack) == 0;
 }
 
-function getIntersectionForSortedArray(array $coll1, array $coll2)
+function getIntersectionOfSortedArray(array $coll1, array $coll2)
 {
     $Intersection = [];
     if (empty($coll1) or empty($coll2)) {
         return $Intersection;
     }
+    $i = 0;
+    $i2 = 0;
+    do {
+        if ($coll1[$i] == $coll2[$i2]) {
+            $Intersection[] = $coll1[$i];
+            $i++;
+            $i2++;    
+        }
+        elseif ($coll1[$i] > $coll2[$i2]) {
+            $i++;
+        }
+        else{
+            $i2++;
+        }
+        
+    } while ($i <= sizeof($coll1) - 1 and $i2 <= sizeof($coll2) - 1);
     
     return $Intersection;
 }
