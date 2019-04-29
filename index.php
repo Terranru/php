@@ -1,7 +1,10 @@
 <?php
 require_once('Arrays.php');
 
-use function App\Arrays\getIntersectionOfSortedArray;
+use function App\Arrays\get;
 
-getIntersectionOfSortedArray([10, 11, 24], [10, 13, 14, 18, 24, 30]);
-// => [10, 24]
+$cities = ['moscow', 'london', 'berlin', 'porto'];
+
+get($cities, 1); // => london
+get($cities, 4); // => null
+get($cities, 10, 'paris'); // => paris

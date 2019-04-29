@@ -234,7 +234,7 @@ function getIntersectionOfSortedArray(array $coll1, array $coll2)
             $i++;
             $i2++;    
         }
-        elseif ($coll1[$i] > $coll2[$i2]) {
+        elseif ($coll1[$i] < $coll2[$i2]) {
             $i++;
         }
         else{
@@ -244,5 +244,17 @@ function getIntersectionOfSortedArray(array $coll1, array $coll2)
     } while ($i <= sizeof($coll1) - 1 and $i2 <= sizeof($coll2) - 1);
     
     return $Intersection;
+}
+
+function get(array $city, $i, $def_value = null)
+{
+    $def_value = $city[$i] ?? $def_value; 
+    return $def_value;
+}
+
+function getComposerFileData()
+{
+    $json = [];
+    return $json;
 }
 // END
