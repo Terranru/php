@@ -254,7 +254,8 @@ function get(array $city, $i, $def_value = null)
 
 function getComposerFileData()
 {
-    $json = [];
+    $json['autoload'] = [['files'] => '"src/Arrays.php"']];
+    $json['config'] = [['vendor-dir' => '/composer/vendor']];
     return $json;
 }
 // END
